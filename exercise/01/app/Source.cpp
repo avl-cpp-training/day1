@@ -44,15 +44,7 @@ namespace dynamic_lib
 int main()
 {
   std::cout << "Static library: " << static_lib::get_value(1) << std::endl;
-  try
-  {
-    std::cout << "Dynamic library without implib: " << dynamic_lib::get_value(1) << std::endl;
-  }
-  catch (std::invalid_argument& e)
-  {
-    std::cout << e.what() << std::endl;
-    return 1;
-  }
+  std::cout << "Dynamic library without implib: " << dynamic_lib::get_value(1) << std::endl;
   std::cout << "Dynamic library with implib: " << get_value(1) << std::endl;
   
   return 0;
