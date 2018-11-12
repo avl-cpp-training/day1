@@ -72,27 +72,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -107,13 +107,13 @@
       <AdditionalLibraryDirectories>..\lib\$(Platform)\$(Configuration)\;..\dll2\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)"
-copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)"</Command>
+      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)\"
+copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -128,13 +128,13 @@ copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(P
       <AdditionalLibraryDirectories>..\lib\$(Platform)\$(Configuration)\;..\dll2\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)"
-copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)"</Command>
+      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)\"
+copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -153,13 +153,13 @@ copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(P
       <AdditionalLibraryDirectories>..\lib\$(Platform)\$(Configuration)\;..\dll2\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)"
-copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)"</Command>
+      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)\"
+copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -178,12 +178,14 @@ copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(P
       <AdditionalLibraryDirectories>..\lib\$(Platform)\$(Configuration)\;..\dll2\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)"
-copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)"</Command>
+      <Command>copy "..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll" "$(Platform)\$(Configuration)\"
+copy "..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll" "$(Platform)\$(Configuration)\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="app.cpp" />
+    <ClCompile Include="app.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>
