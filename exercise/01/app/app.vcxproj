@@ -71,9 +71,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -83,9 +85,17 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\lib\$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy ..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library.dll
+copy ..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.dll</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -95,9 +105,17 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\lib\$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy ..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library.dll
+copy ..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.dll</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -111,9 +129,17 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\lib\$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy ..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library.dll
+copy ..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.dll</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -127,9 +153,17 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(SolutionDir)$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\lib\$(Platform)\$(Configuration)\static_library.lib;$(SolutionDir)\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy ..\dll1\$(Platform)\$(Configuration)\dynamic_library.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library.dll
+copy ..\dll2\$(Platform)\$(Configuration)\dynamic_library_with_implib.dll $(SolutionDir)$(Platform)\$(Configuration)\dynamic_library_with_implib.dll</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
