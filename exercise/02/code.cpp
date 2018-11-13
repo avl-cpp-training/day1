@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "code.h"
+#include <algorithm>
 
 void f1(int& a, int& b)
 {
@@ -9,9 +10,5 @@ void f1(int& a, int& b)
 
 void f2(int* begin, int* end)
 {
-  while (begin < end)
-  {
-    ++(*begin);
-    ++begin;
-  }
+  std::for_each(begin, end, [](auto& arg) {return ++arg; });
 }
