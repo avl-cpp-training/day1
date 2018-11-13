@@ -12,7 +12,7 @@ struct function_wrapper
     {
       throw std::invalid_argument("invalid path to target dll");
     }
-    m_function = (function_t) ::GetProcAddress(m_handle, function.c_str());
+    m_function = reinterpret_cast<function_t>(::GetProcAddress(m_handle, function.c_str()));
     if (nullptr == m_function)
     {
       throw std::invalid_argument("invalid function argument");
