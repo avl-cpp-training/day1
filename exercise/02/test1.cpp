@@ -36,5 +36,13 @@ namespace simple_test
 			Assert::AreEqual(9, arr[3]);
 			Assert::AreEqual(11, arr[4]);
 		}
+    TEST_METHOD(f2_works_for_partial_update)
+		{
+      int arr[] = { 1, 2, 3 };
+      f2(arr, arr + 2);
+      Assert::AreEqual(2, arr[0]);
+      Assert::AreEqual(3, arr[1]);
+      Assert::AreEqual(3, arr[2]);
+		}
 	};
 }
