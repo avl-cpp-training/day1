@@ -14,7 +14,7 @@ namespace simple_test
 		TEST_METHOD(f1_changes_values)
 		{
 			int a=1, b=2;
-			f1(&a, &b);
+			f1(a, b);
 			Assert::AreEqual(2, a);
 			Assert::AreEqual(1, b);
 		}
