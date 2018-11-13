@@ -16,7 +16,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dynamic_library", "dll1\dyn
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dynamic_library_with_implib", "dll2\dynamic_library_with_implib.vcxproj", "{4EA09877-C87B-489E-9F80-A921D8E66E46}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{3D4FBC14-0CE8-443D-8003-56737D1BCFA2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple_test", "..\02\simple_test.vcxproj", "{F2F0B29D-E5BA-47BD-A20C-6373652373DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +58,14 @@ Global
 		{4EA09877-C87B-489E-9F80-A921D8E66E46}.Release|x64.Build.0 = Release|x64
 		{4EA09877-C87B-489E-9F80-A921D8E66E46}.Release|x86.ActiveCfg = Release|Win32
 		{4EA09877-C87B-489E-9F80-A921D8E66E46}.Release|x86.Build.0 = Release|Win32
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Debug|x64.ActiveCfg = Debug|x64
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Debug|x64.Build.0 = Debug|x64
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Debug|x86.ActiveCfg = Debug|Win32
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Debug|x86.Build.0 = Debug|Win32
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Release|x64.ActiveCfg = Release|x64
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Release|x64.Build.0 = Release|x64
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Release|x86.ActiveCfg = Release|Win32
+		{F2F0B29D-E5BA-47BD-A20C-6373652373DB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
