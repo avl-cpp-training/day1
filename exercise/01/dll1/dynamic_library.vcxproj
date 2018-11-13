@@ -123,6 +123,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>
       </ImportLibrary>
+      <AdditionalLibraryDirectories>..\lib\$(Platform)\$(Configuration)\;..\dll\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>del $(TargetDir)\dynamic_library.lib</Command>
