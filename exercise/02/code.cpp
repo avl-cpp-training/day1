@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "code.h"
 
-#include <algorithm>
+#include <utility>
 
 void f1(int& a, int& b)
 {
