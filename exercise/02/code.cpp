@@ -10,9 +10,5 @@ void f1(int& a, int& b)
 
 void f2(int* a, const int* b)
 {
-  while (a != b)
-  {
-    *a = *a + 1;
-    ++a;
-  }
+  for (; a != b; ++a) *a = *a + 1;
 }
